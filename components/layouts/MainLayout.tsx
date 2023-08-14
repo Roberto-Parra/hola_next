@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import Head from 'next/head'
 import styles  from './MainLayout.module.css';
 import { Navbar } from '../Navbar';
@@ -7,7 +7,11 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const MainLayout: FC = ({ children }) => {
+interface MainLayoutProps {
+  children: ReactNode;
+}
+
+export const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <>
           <Head>
